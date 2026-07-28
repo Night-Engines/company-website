@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Night Engines — Websites, applications &amp; AI that works for you</title>
+<meta name="description" content="Night Engines is an AI agency in Athens. We build websites, applications, and AI that does your busywork overnight — running on a private server of your business's knowledge, and nothing leaves without your approval." />
+<link rel="canonical" href="https://nightengines.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Night Engines" />
+<meta property="og:url" content="https://nightengines.com/" />
+<meta property="og:title" content="Night Engines — Websites, applications &amp; AI that works for you" />
+<meta property="og:description" content="Night Engines is an AI agency in Athens. We build websites, applications, and AI that does your busywork overnight — running on a private server of your business's knowledge, and nothing leaves without your approval." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Night Engines — Websites, applications &amp; AI that works for you" />
+<meta name="twitter:description" content="Night Engines is an AI agency in Athens. We build websites, applications, and AI that does your busywork overnight — running on a private server of your business's knowledge, and nothing leaves without your approval." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,500..800&family=Albert+Sans:wght@400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script>
+/* boot loader gate — every visit to index, never on reduced motion, never without JS */
+(function(){try{
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.documentElement.classList.add('booting');
+  }
+}catch(e){}})();
+</script>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Night Engines",
+ "url":"https://nightengines.com/","email":"michael.angeles@nightengines.com",
+ "description":"AI agency in Athens building websites, applications and AI systems that do a business's busywork overnight on its own private server.",
+ "address":{"@type":"PostalAddress","addressLocality":"Athens","addressCountry":"GR"},
+ "founder":{"@type":"Person","name":"Michael Angeles","url":"https://michangelis.github.io","sameAs":["https://www.linkedin.com/in/michangelis"]},
+ "sameAs":["https://www.linkedin.com/in/michangelis"]}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- boot loader — the mark draws itself, then the site is already there -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">
+    <svg class="lm-ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="54"/></svg>
+    <img class="lm-logo" src="assets/logo.png" alt="" width="140" height="140" />
+  </div>
+  <p class="loader-word mono">Night Engines</p>
+</div>
+
+<!-- Live 3D vault scene (landing only) -->
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<!-- Static beauty shot: shown when WebGL is unavailable or reduced-motion. -->
+<div class="fallback" aria-hidden="true">
+  <div class="fb-ground"></div>
+  <div class="fb-monolith m5"></div>
+  <div class="fb-monolith m4"></div>
+  <div class="fb-monolith m3"></div>
+  <div class="fb-monolith m2"></div>
+  <div class="fb-monolith m1 lit"></div>
+  <div class="fb-fog"></div>
+</div>
+
+<!-- Chapter HUD — names the current stage of the story -->
+<aside class="hud-ch" id="hud" aria-hidden="true">
+  <ol>
+    <li class="on">The floor</li>
+    <li>The brain</li>
+    <li>The engine</li>
+    <li>The airlock</li>
+    <li>Morning</li>
+  </ol>
+  <p class="hud-cap">Night Engines · CH 1–5</p>
+</aside>
+
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Night Engines home">
+    <span class="brand-chip"><img src="assets/logo.png" alt="" width="34" height="34" /></span>
+    <span class="brand-word">Night&nbsp;Engines</span>
+    <span class="brand-ref">Athens&nbsp;·&nbsp;AI&nbsp;agency</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="brain.html">Brain</a></li>
+      <li><a href="engine.html">Engine</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="cta cta--nav" href="book.html">Book a call</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO — readable with zero JS ============ -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="mono rv" data-rv-group="hero" style="color:var(--accent);margin:0 0 18px">An AI agency · websites · applications · AI that works for you</p>
+          <h1 id="hero-h" class="rv" data-rv-group="hero">Work done<br />while you <span class="acc">sleep.</span></h1>
+          <p class="lede rv" data-rv-group="hero">Inbox, follow-ups, reports, record-keeping — the busywork that eats your day. We set up AI that does it overnight, on a private server that holds everything your business knows, and run it for you.</p>
+          <div class="hero-actions rv" data-rv-group="hero">
+            <a class="cta" href="book.html">Book a call</a>
+            <a class="linkline" href="#ch1">Watch how it works ↓</a>
+          </div>
+          <p class="hero-note rv" data-rv-group="hero">An agent is only as good as what it knows. <b>So we build the brain first.</b></p>
+        </div>
+        <aside class="titleblock rv" data-rv-group="hero" aria-label="Title block">
+          <div class="tb-row"><span class="tb-k">Project</span><span class="tb-v">Night Engines</span></div>
+          <div class="tb-row"><span class="tb-k">Sells</span><span class="tb-v">Sites · apps · agents</span></div>
+          <div class="tb-row"><span class="tb-k">Mode</span><span class="tb-v">Approved playbooks only</span></div>
+          <div class="tb-row"><span class="tb-k">Client #0</span><span class="tb-v live">Hellas Direct</span></div>
+        </aside>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span>Scroll — five chapters</span><i></i></div>
+  </section>
+
+  <!-- ============ THE STAGE — five labeled chapters ============ -->
+  <div class="stage" id="stage">
+
+    <section class="ch" id="ch1" aria-label="Chapter 1 — The floor">
+      <div class="wrap ch-pin">
+        <div class="ch-card">
+          <p class="ch-tag mono">CH 1 / 5 · The floor</p>
+          <h2 data-sweep>One client. One server.</h2>
+          <p class="ch-line">Every business we run gets its own sealed vault on dedicated hardware. <b>Your data never mixes</b> — not with other clients, not with anyone's cloud.</p>
+          <p class="ch-sub">On screen — <b>a row of sealed vaults in the dark. The lit one is yours.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch ch--r" id="ch2" aria-label="Chapter 2 — The brain">
+      <div class="wrap ch-pin">
+        <div class="ch-card">
+          <p class="ch-tag mono">CH 2 / 5 · The brain</p>
+          <h2 data-sweep>First, we build the brain.</h2>
+          <p class="ch-line">Docs, inboxes, spreadsheets, tribal knowledge — ingested, cleaned, and structured into <b>records a model can actually use</b>. One queryable source of truth, yours to keep.</p>
+          <p class="ch-sub">On screen — <b>scattered shards snap into an ordered lattice inside your vault.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch" id="ch3" aria-label="Chapter 3 — The engine">
+      <div class="wrap ch-pin">
+        <div class="ch-card">
+          <p class="ch-tag mono">CH 3 / 5 · The engine</p>
+          <h2 data-sweep>Then the engine runs it.</h2>
+          <p class="ch-line">AI agents arrive <b>already set up for your business</b> — tools connected, workflows agreed with you in advance — and work through the busywork: triage, records, reports, monitoring. Then they report back.</p>
+          <p class="ch-sub">On screen — <b>an agent core spins up; threads of work light the lattice.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch ch--r" id="ch4" aria-label="Chapter 4 — The airlock">
+      <div class="wrap ch-pin">
+        <div class="ch-card">
+          <p class="ch-tag mono">CH 4 / 5 · The airlock</p>
+          <h2 data-sweep>Nothing leaves without you.</h2>
+          <p class="ch-line">Sending, publishing, buying — anything outbound queues at the door and <b>waits for your one-word approval</b>. It never types your passwords.</p>
+          <p class="ch-sub">On screen — <b>outbound items queue at the vault door; it opens only on approval.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch" id="ch5" aria-label="Chapter 5 — Morning">
+      <div class="wrap ch-pin">
+        <div class="ch-card">
+          <p class="ch-tag mono">CH 5 / 5 · Morning</p>
+          <h2 data-sweep>By morning, it's done.</h2>
+          <p class="ch-line">The vault is sealed again. Finished work is waiting — <b>in the chat apps you already use</b>: drafts, reports, alerts, records.</p>
+          <p class="ch-sub">On screen — <b>the sealed vault streams finished work to labeled destinations.</b></p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ AFTER THE STAGE — solid ground ============ -->
+  <div class="after">
+
+    <!-- one-breath recap -->
+    <section class="plate" aria-labelledby="breath-h">
+      <div class="wrap plate-grid">
+        <p class="plate-ref"><b>NE · §01</b>In one breath</p>
+        <div>
+          <hr class="rule rv" />
+          <h2 class="sec-title" data-sweep id="breath-h">What you just watched</h2>
+          <p class="breath rv">We organize your company's knowledge into a <b>private brain</b> on your own server. AI agents run <b>workflows you agreed to</b> on it overnight, and <b>ask approval</b> before anything leaves. By morning, the work is in your chat.</p>
+          <p class="dim-p rv" style="margin-top:18px">Client&nbsp;#0 was <a href="https://www.hellasdirect.gr/" target="_blank" rel="noopener" style="color:var(--accent)">Hellas Direct</a> — a 500k+-customer insurer where Michael built and ran the AI lab. Night Engines brings the same systems to businesses that don't have one. <a href="work.html" style="color:var(--accent)">See the work →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- what we sell — concrete -->
+    <section class="plate plate--band" aria-labelledby="sell-h">
+      <div class="wrap plate-grid">
+        <p class="plate-ref"><b>NE · §02</b>What we sell</p>
+        <div>
+          <hr class="rule rv" />
+          <h2 class="sec-title" data-sweep id="sell-h">Three things. Priced per project.</h2>
+          <div class="offers rv">
+            <div class="offer">
+              <span class="offer-no">01</span>
+              <h3>Websites</h3>
+              <p>Designed and hand-built end to end — like this one. Fast, self-contained, no template smell.</p>
+              <ul class="chips" aria-label="Website scope">
+                <li>design → code</li>
+                <li>copy &amp; structure</li>
+                <li>deploy &amp; domain</li>
+              </ul>
+            </div>
+            <div class="offer">
+              <span class="offer-no">02</span>
+              <h3>Applications</h3>
+              <p>Web apps and internal tools, from spec to production — dashboards, portals, pipelines, integrations.</p>
+              <ul class="chips" aria-label="Application scope">
+                <li>full-stack builds</li>
+                <li>API integrations</li>
+                <li>hosted &amp; maintained</li>
+              </ul>
+            </div>
+            <div class="offer">
+              <span class="offer-no">03</span>
+              <h3>Agentic setups</h3>
+              <p>The brain + engine you just scrolled through — built for your business, then operated monthly.</p>
+              <ul class="chips" aria-label="Agentic scope">
+                <li>private brain</li>
+                <li>agents set up in advance</li>
+                <li>operated for you</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.after -->
+</main>
+
+<section class="bookstrip" aria-labelledby="bs-h">
+  <div class="wrap bookstrip-inner">
+    <div>
+      <h2 data-sweep id="bs-h">Book a 30-min discovery call.</h2>
+      <p class="bs-sub">Map your data, pick the first workflows, and get an honest read on whether this pays for itself. Free.</p>
+    </div>
+    <div class="bookstrip-actions">
+      <a class="cta cta--lg" href="book.html">Book a call</a>
+      <a class="linkline" href="mailto:michael.angeles@nightengines.com">michael.angeles@nightengines.com</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true" width="28" height="28"><path d="M21 14.5 A22 22 0 1 0 43 14.5" fill="none" stroke="#D9E6F2" stroke-width="6.5" stroke-linecap="round"/><path d="M32 6 l4.2 5.2 v14.6 L32 31 l-4.2 -5.2 V11.2 Z" fill="#54C6FF"/></svg>
+      <div>
+        <p class="foot-name">Night Engines</p>
+        <p class="foot-tag mono">Websites · applications · AI that works overnight, operated for your business</p>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <a href="mailto:michael.angeles@nightengines.com">michael.angeles@nightengines.com</a>
+      <a href="https://www.linkedin.com/in/michangelis" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://michangelis.github.io" target="_blank" rel="noopener">michangelis.github.io</a>
+    </div>
+    <p class="foot-plate">Night Engines · Athens · © 2026</p>
+  </div>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
