@@ -29,8 +29,3 @@
 - Google Fonts URLs in `fonts/fonts.css` were rewritten to local files; a re-fetch
   replaces the file set (names include the upstream hash).
 
-## Sync state (2026-09-02)
-- Local build, validate, capture and grading are complete (19 components, 43 cells good).
-- Target Claude Design project: **create a fresh one named "Night Engines"** (user's choice).
-  Not created yet — `DesignSync` needed `/design-login`. Once `projectId` is in
-  `config.json` this note is obsolete.
