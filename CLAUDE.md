@@ -63,3 +63,14 @@ fully, the machine sits assembled. The landing page also has a CSS-only
 `NOTES.md` is the authoritative design story — read it before changing pages.
 Company context (offer, positioning, ops record) lives in the company brain at
 `~/Projects/Brains/nightengines-brain`, not here.
+
+## Design system (claude.ai/design)
+
+`design-system/` is the one exception to "no package.json": a small React
+package (`@night-engines/ui`) of thin wrappers over the site's real CSS
+classes, synced to Claude Design with `/design-sync`. It is not part of the
+site. Its build copies the root `style.css` into `dist/`, so the site's
+stylesheet stays the single source of truth; `.paper` in `style.css` is an
+alias of `body` that the `Paper` component uses as the app ground. Sync
+config and notes live in `.design-sync/`; read `.design-sync/NOTES.md`
+before touching either.

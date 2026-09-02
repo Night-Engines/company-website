@@ -1,0 +1,5 @@
+/* design-system additions: the site never puts .cta on a <button>; apps do. */
+button.cta{cursor:pointer}
+/* .paper is the app root (aliases the site's body ground above). isolate so its
+   fixed grid/grain pseudo-elements (z-index -2) paint above its own background. */
+.paper{isolation:isolate;min-height:100%}

@@ -1,0 +1,35 @@
+{
+  "shape": "package",
+  "pkg": "@night-engines/ui",
+  "globalName": "NightEngines",
+  "buildCmd": "cd design-system && npm run build",
+  "cssEntry": "dist/style.css",
+  "extraFonts": [
+    "fonts/fonts.css"
+  ],
+  "overrides": {
+    "DataTable": {
+      "cardMode": "column"
+    },
+    "Topbar": {
+      "cardMode": "column",
+      "viewport": "1200x160"
+    },
+    "Footer": {
+      "cardMode": "column"
+    },
+    "Plate": {
+      "cardMode": "column"
+    },
+    "DimLine": {
+      "cardMode": "column"
+    },
+    "Paper": {
+      "cardMode": "column"
+    }
+  },
+  "provider": {
+    "component": "Paper"
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}
