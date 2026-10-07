@@ -100,6 +100,89 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
   }, 1400);
 })();
 
+/* ---------- 0b · Consent (every page) -----------------------------------
+   Calendly (book page) is the only thing on the site that sets cookies, so
+   it loads only after Accept. The choice itself lives in localStorage
+   ('ne-consent' = accepted | rejected) — strictly necessary, never sent
+   anywhere. Reject is one click, same weight as Accept. JS off = no banner,
+   no Calendly; book.html's <noscript> link still works.
+   ------------------------------------------------------------------------ */
+(function consent(){
+  'use strict';
+
+  const KEY = 'ne-consent';
+  const CALENDLY_JS = 'https://assets.calendly.com/assets/external/widget.js';
+  const widget = document.querySelector('.calendly-inline-widget');
+  const slot = document.querySelector('[data-cal-consent]');
+  let bar = null, calendlyLoaded = false;
+
+  function read(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
+  function write(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+
+  function loadCalendly(){
+    if (calendlyLoaded || !widget) return;
+    calendlyLoaded = true;
+    const s = document.createElement('script');
+    s.src = CALENDLY_JS; s.async = true;
+    document.body.appendChild(s);
+  }
+
+  function apply(state){
+    if (!widget) return;
+    const ok = state === 'accepted';
+    widget.hidden = !ok;
+    if (slot) slot.hidden = ok;
+    if (ok) loadCalendly();
+  }
+
+  function choose(state){
+    const wasLoaded = calendlyLoaded;
+    write(state);
+    closeBar();
+    // Calendly can't be unloaded in place — a reload drops it and its iframe
+    if (state === 'rejected' && wasLoaded){ location.reload(); return; }
+    apply(state);
+  }
+
+  function closeBar(){
+    if (!bar) return;
+    bar.remove(); bar = null;
+  }
+
+  function openBar(){
+    if (bar) return;
+    bar = document.createElement('section');
+    bar.className = 'consent';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Cookie choice');
+    bar.innerHTML =
+      '<p><strong>One cookie question.</strong> The booking calendar is run by Calendly, which sets its own cookies, including analytics and marketing ones. ' +
+      'Nothing else on this site tracks you. <a href="cookies.html">Details</a></p>' +
+      '<div class="consent-actions">' +
+        '<button type="button" class="cta cta--ghost" data-choice="rejected">Reject</button>' +
+        '<button type="button" class="cta cta--ghost" data-choice="accepted">Accept</button>' +
+      '</div>';
+    bar.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-choice]');
+      if (b) choose(b.getAttribute('data-choice'));
+    });
+    document.body.appendChild(bar);
+  }
+
+  document.querySelectorAll('[data-consent-open]').forEach(b => {
+    b.hidden = false;
+    // from the footer: open and move focus into the bar
+    b.addEventListener('click', () => { openBar(); bar.querySelector('button').focus(); });
+  });
+  document.querySelectorAll('[data-consent-accept]').forEach(b => {
+    b.addEventListener('click', () => choose('accepted'));
+  });
+
+  const state = read();
+  apply(state);
+  if (state !== 'accepted' && state !== 'rejected') openBar();
+})();
+
 /* ---------- 1 · Landing scene gate -------------------------------------- */
 function webglOK(){
   try{

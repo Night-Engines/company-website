@@ -15,9 +15,7 @@
 <meta name="twitter:title" content="Book a call — Night Engines" />
 <meta name="twitter:description" content="Book a free 30-minute discovery call with Michael Angeles: map your data, pick two or three workflows, and get an honest read on whether automating them pays for itself." />
 <link rel="icon" href="assets/logo.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,500..800&family=Albert+Sans:wght@400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
 <link rel="stylesheet" href="style.css" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","url":"https://nightengines.com/book.html","name":"Book a call — Night Engines",
@@ -97,9 +95,14 @@
 
       <div>
         <div class="cal-frame rv">
-          <div class="calendly-inline-widget"
+          <div class="calendly-inline-widget" hidden
                data-url="https://calendly.com/michael-angeles-nightengines/30min?hide_gdpr_banner=1&amp;background_color=0e2036&amp;text_color=d9e6f2&amp;primary_color=54c6ff"
                style="min-width:300px;height:680px"></div>
+          <div class="embed-slot cal-consent" data-cal-consent hidden>
+            <span class="mono" style="color:var(--accent)">Calendar paused</span>
+            <p class="cal-consent-copy">The calendar is run by Calendly, which sets its own cookies, including analytics and marketing ones. It loads only if you allow it. <a href="cookies.html">What Calendly sets</a></p>
+            <button type="button" class="cta" data-consent-accept>Allow Calendly &amp; load calendar</button>
+          </div>
           <noscript>
             <div class="embed-slot">
               <span class="mono" style="color:var(--accent)">JavaScript is off</span>
@@ -129,10 +132,10 @@
       <a href="https://michangelis.github.io" target="_blank" rel="noopener">michangelis.github.io</a>
     </div>
     <p class="foot-plate">Night Engines · Athens · © 2026</p>
+    <p class="foot-legal"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a><button type="button" data-consent-open hidden>Cookie settings</button></p>
   </div>
 </footer>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script type="module" src="main.js"></script>
 </body>
 </html>

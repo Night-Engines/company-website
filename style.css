@@ -747,6 +747,62 @@ html.booting{overflow:hidden}
 .js-scrub .machine .plate.is-live .lbl{fill:var(--accent)}
 .js-scrub .machine .plate.is-live .c-line{opacity:1;stroke:var(--accent)}
 
+/* ---------- LEGAL PAGES — privacy, cookies, terms ---------- */
+.legal{max-width:44em;margin-top:clamp(28px,4vw,48px);color:var(--dim)}
+.legal h2{font-size:clamp(1.3rem,2.4vw,1.7rem);color:var(--ink);margin:2.4em 0 .6em;
+  padding-top:1.2em;border-top:1px solid var(--hair)}
+.legal h2:first-child{margin-top:0;padding-top:0;border-top:0}
+.legal h3{font-family:var(--f-mono);font-size:.74rem;font-weight:400;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);margin:1.8em 0 .5em}
+.legal p,.legal li{line-height:1.7}
+.legal ul{padding-left:1.2em}
+.legal li{margin:.35em 0}
+.legal strong{color:var(--ink);font-weight:600}
+.legal a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--hair);
+  transition:border-color var(--t1) var(--e)}
+.legal a:hover{border-color:var(--accent)}
+.legal-meta{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint);margin:14px 0 0}
+.legal-table-wrap{overflow-x:auto;margin:1em 0;border:1px solid var(--hair);border-radius:var(--r)}
+.legal table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:520px}
+.legal th,.legal td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid var(--hair)}
+.legal thead th{border-top:0;background:var(--panel);font-family:var(--f-mono);font-weight:400;
+  font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.legal td code{font-family:var(--f-mono);font-size:.8rem;color:var(--ink)}
+.legal .footnote{margin-top:3em;padding-top:1.4em;border-top:1px solid var(--hair);
+  text-transform:none;letter-spacing:.04em}
+
+/* footer legal row — spans the title block */
+.foot-legal{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;
+  padding-top:18px;border-top:1px solid var(--hair);font-family:var(--f-mono);
+  font-size:.62rem;letter-spacing:.14em;text-transform:uppercase}
+.foot-legal a,.foot-legal button{color:var(--faint);text-decoration:none;background:none;border:0;
+  padding:0;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;
+  transition:color var(--t1) var(--e)}
+.foot-legal a:hover,.foot-legal button:hover{color:var(--accent)}
+.foot-legal [hidden]{display:none}
+
+/* ---------- CONSENT — one bar, equal-weight choices ---------- */
+.consent{position:fixed;left:clamp(12px,2vw,24px);right:clamp(12px,2vw,24px);bottom:clamp(12px,2vw,24px);
+  z-index:150;max-width:760px;margin:0 auto;background:var(--panel);border:1px solid var(--hair);
+  border-radius:var(--r);box-shadow:0 18px 48px rgba(0,0,0,.45);padding:16px 18px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;
+  animation:consent-in var(--t3) var(--e) both}
+@keyframes consent-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.consent p{margin:0;flex:1 1 300px;font-size:.92rem;line-height:1.55;color:var(--dim)}
+.consent p strong{color:var(--ink);font-weight:600}
+.consent a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--hair)}
+.consent-actions{display:flex;gap:10px;flex:0 0 auto}
+button.cta{cursor:pointer}
+.consent-actions .cta{padding:11px 20px;min-width:7.5em;justify-content:center;text-align:center}
+@media (max-width:520px){.consent-actions{flex:1 1 100%}.consent-actions .cta{flex:1}}
+
+/* booking — calendar placeholder until Calendly is allowed */
+.cal-consent{min-height:420px;padding:28px 24px;text-align:center}
+.cal-consent[hidden]{display:none}
+.cal-consent-copy{color:var(--dim);max-width:26em;margin:4px 0 10px;line-height:1.6}
+.cal-consent-copy a{color:var(--accent)}
+
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
