@@ -5,7 +5,7 @@ export const Default = () => (
   <Footer
     tagline="Websites · applications · agentic systems, operated for your business"
     links={[
-      { label: 'michael.angeles@nightengines.com', href: 'mailto:michael.angeles@nightengines.com' },
+      { label: 'hello@nightengines.com', href: 'mailto:hello@nightengines.com' },
       { label: 'LinkedIn', href: '#linkedin' },
       { label: 'michangelis.github.io', href: '#site' },
     ]}

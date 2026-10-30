@@ -11,7 +11,7 @@ knowledge, worked by agents that arrive preloaded — skills installed, MCP serv
 connected, workflows agreed up front — run on a schedule and report back. Nothing
 leaves without approval.
 
-- Email: michael.angeles@nightengines.com
+- Email: hello@nightengines.com
 - Founder: [Michael Angeles](https://michangelis.github.io) — set up and ran the
   Hellas Direct AI lab (claims automation in production, 2,000+ real claims).
 
